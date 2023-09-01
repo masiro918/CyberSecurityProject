@@ -15,12 +15,9 @@ echo "try to match $username and " . md5($password);
 foreach ($results as $key => $value) {
 	$blocks = explode(";", $value);
 	if (($username == $blocks[0]) && (md5($password) == $blocks[1])) {
-		// login successded
-		// add session and redirect to the chat page
-		//echo "try to match $username and $password to " . $blocks[0] . ";" . $blocks[1];
 		$_SESSION["username"] = $username;
-        header("Location: chat.php");
-        die();
+        	header("Location: chat.php");
+        	die();
 	}
 }
 
