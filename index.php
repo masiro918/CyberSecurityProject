@@ -6,7 +6,7 @@
 	<p>username</p>
 	<input type="text" name="username">
 	<p>password</p>
-	<input type="text" name="password">
+	<input type="password" name="password">
 	<input type="submit" value="login">
 	</form>
 	
