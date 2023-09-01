@@ -32,6 +32,13 @@ if (!isset($_SESSION["username"])) {
 		include("db_conn.php");
 		
 		$conn = make_connection();
+
+		/*
+		 * If we have arguments in sql-query, the example of sql-injection is to put
+   		 * user's input as variable to the sql-query e.g. "select * from Messages order by $input DESC".
+      		 * In this example case user could list message by own way, but also input dangerous command e.g.
+	         * "; DROP TABLE Messages; --".
+		 */
 		$query = $conn->prepare("SELECT * FROM Messages ORDER BY timestamp DESC");
 		$query->execute();
 
