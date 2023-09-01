@@ -25,7 +25,6 @@ function username_exists($username) {
 }
 
 if (username_exists($username) == false) {
-	// create account and redirect to the main page
 	$conn = make_connection();
 	$sql = "insert into Users (username, password) values (?, ?);";  
 	$statement = $conn->prepare($sql);  
