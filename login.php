@@ -21,22 +21,15 @@ foreach ($results as $key => $value) {
 	}
 }
 
-// username or password was wrong
-echo "wrong";
-//header("Location: index.php");
-
 function get_from_database($conn) {
 	$users = array();
 	try {
-		echo "create prepare<br>";
 		$query = $conn->prepare("SELECT * FROM Users;");
-		echo "create execute<br>";
 		$query->execute();
 		
 		$i=0;
 		while ($line = $query->fetch()) {
 			$users[$i] = $line["username"] . ";" . $line["password"];
-			echo $users[$i];
 			$i++;
 		}
 		return $users;
