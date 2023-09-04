@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Add sessions start to make authorization. Now everyone can put messages without sign in.
+ */
+
 include("db_conn.php");
 
 ini_set('display_errors', 1);
