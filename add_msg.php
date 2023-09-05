@@ -28,7 +28,15 @@ $message = $_POST["message"];
 // add the message to the database
 $conn = make_connection();
 $query = $conn->prepare("insert into Messages (username, timestamp , message) values (?, NOW(), ?);");  
-$query->execute(array($username, $message));  
+$query->execute(array($username, $message));
+
+/*
+SQL-injection would be:
+
+$query = $conn->prepare("insert into Messages (username, timestamp , message) values ($username, NOW(), $password);");
+$query->execute();
+
+*/
 
 header("Location: chat.php");
 
