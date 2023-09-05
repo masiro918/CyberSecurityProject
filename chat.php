@@ -2,10 +2,6 @@
 
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 echo "session " . $_SESSION["username"];
 
 
@@ -43,6 +39,11 @@ if (!isset($_SESSION["username"])) {
 		$query->execute();
 
 		while ($line = $query->fetch()) {
+			/*
+			 * Also you can notice that we dont do any escaping for database data, so if for example
+    			 * variable $line["username"] includes eval or make_function function (PHP standard lib),
+	                 * it gives attacker do anything for server.
+			 */
 			$username = $line["username"];
 			$timestamp = $line["timestamp"];
 			$msg = $line["message"];
