@@ -10,7 +10,6 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 $results = get_from_database(make_connection());
-echo "try to match $username and " . md5($password);
 
 foreach ($results as $key => $value) {
 	$blocks = explode(";", $value);
