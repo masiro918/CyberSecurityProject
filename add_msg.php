@@ -2,6 +2,13 @@
 
 /*
  * Add sessions start to make authorization. Now everyone can put messages without sign in.
+ * so type after <?php : 
+ 
+ session_start(); 
+ if (!isset($_SESSION["username"])) {
+	echo "You are not logged in!";
+	die();
+ }
  */
 
 include("db_conn.php");
