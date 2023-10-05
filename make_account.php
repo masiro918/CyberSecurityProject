@@ -33,6 +33,7 @@ if (username_exists($username) == false) {
 	$sql = "insert into Users (username, password) values (?, ?);";  
 	$statement = $conn->prepare($sql);  
 	$statement->execute(array($username, md5($password)));  
+	// safer: $statement->execute(array($username, hash("sha256", $username))); 
 	header("Location: index.php");
 }
 
