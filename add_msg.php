@@ -13,8 +13,8 @@
 
 include("db_conn.php");
 
-$username = $_POST["username"];
-$message = $_POST["message"];
+$username = $_POST["username"]; // sanitize: $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+$message = $_POST["message"]; // sanitize: $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
 /*
  * 
