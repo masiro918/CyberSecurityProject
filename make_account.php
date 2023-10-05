@@ -21,6 +21,11 @@ function username_exists($username) {
 			return true;
 		}
 	}
+
+	/*
+	 * password must be include at least 10 character and one special character inside password.
+  	 * the special character dosn't located at the beginning or the last character location
+	 */
 	return false;
 }
 
