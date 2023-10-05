@@ -39,10 +39,10 @@ if (!isset($_SESSION["username"])) {
 		$query->execute();
 
 		while ($line = $query->fetch()) {
-			/*
-			 * Also you can notice that we dont do any escaping for database data, so if for example
-    			 * variable $line["username"] includes eval or make_function function (PHP standard lib),
-	                 * it gives attacker do anything for server.
+			/* 
+			 * Escape HTML and JavaScript by using htmlspecialchars:
+    			   $username = htmlspecialchars($line["username"]);
+			   $msg = htmlspecialchars($line["message"]);
 			 */
 			$username = $line["username"];
 			$timestamp = $line["timestamp"];
