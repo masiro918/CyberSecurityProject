@@ -13,6 +13,7 @@ $results = get_from_database(make_connection());
 
 foreach ($results as $key => $value) {
 	$blocks = explode(";", $value);
+	// better solution: if (($username == $blocks[0]) && (hash("sha256", $password) == $blocks[1])) {
 	if (($username == $blocks[0]) && (md5($password) == $blocks[1])) {
 		$_SESSION["username"] = $username;
         	header("Location: chat.php");
