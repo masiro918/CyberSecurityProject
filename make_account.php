@@ -20,6 +20,7 @@ function username_exists($username) {
 
 	/*
 	 * password must be include at least 10 character and one special character inside password.
+         * however only characters #,%,&,*,+ and = are 'special' characters in this example
     	 * 
          * if (strlen($username) < 10) return true;
 	 * if (preg_match('/[#%&*+=]/', $username) == false) return true; 
