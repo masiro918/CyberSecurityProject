@@ -18,7 +18,6 @@ if (!isset($_SESSION["username"])) {
 	
 	<form action="add_msg.php" method="post">
 	<p>Write your message</p>
-	<!-- there is xss, instead use sessions -->
 	<input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
 	<textarea name="message"></textarea>
 	<input type="submit" value="Add!">
